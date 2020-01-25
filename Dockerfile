@@ -1,5 +1,6 @@
 FROM python:3
-ADD requirements.txt /
-RUN pip install -r requirements.txt 
-ADD main.py /
-CMD ["python", "/main.py"]
+WORKDIR /app
+ADD requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt 
+ADD main.py models.py ./
+CMD ["python", "./main.py"]
