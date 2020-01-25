@@ -2,12 +2,28 @@
 
 This is a python rest srvice with the following rest point.
 
-
+HTTP method GET
 ```
 
 http://localhost:5000/hello?name=foo
 
 ```
+HTTP method POST
+
+Request eg.:
+```
+{
+    "age": 24,
+    "name": "Robert"
+}
+```
+
+```
+
+http://localhost:5000/todos
+
+```
+
 
 ### docker
 
