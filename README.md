@@ -9,21 +9,19 @@ http://localhost:5000/hello?name=foo
 
 ```
 HTTP method POST
+```
 
+http://localhost:5000/todos
+
+```
 Request eg.:
+
 ```
 {
     "age": 24,
     "name": "Robert"
 }
 ```
-
-```
-
-http://localhost:5000/todos
-
-```
-
 
 ### docker
 
