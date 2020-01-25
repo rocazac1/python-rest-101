@@ -1,4 +1,6 @@
 from flask import Flask, request
+import  json
+from models import Person
 
 app = Flask(__name__)
 
@@ -10,5 +12,16 @@ def hello():
     else:
         return("Hello World")
 
+
+@app.route("/todos", methods=['POST'])
+def createToDos():
+    jsonObject = request.get_json()
+    name = jsonObject["name"]
+    age =  jsonObject["age"]
+    person = Person(name, age)
+    print(person)
+    return(person.toJson())
+
+
 if __name__  == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run()
