@@ -17,7 +17,6 @@ docker build -t rocazac1/python-rest-101 .
 ```
 
 Run: 
-````
+```
 docker run  -p 5000:5000 rocazac1/python-rest-101
 ```
-
