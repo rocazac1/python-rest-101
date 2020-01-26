@@ -29,9 +29,9 @@ jobs:
         pip install pytest
         pytest
     - name: Docker Build
-      run: docker build -t rocazac1/python-rest-101 .
+      run: docker build -t $GITHUB_REPOSITORY:$GITHUB_SHA .
     - name: Docker Push DockerHub
       run: |
-        docker login --username rocazac1 --password ${{secrets.DOCKERHUB_PASSWORD}}
-        docker push rocazac1/python-rest-101
+        docker login --username ${{secrets.DOCKERHUB_USER}} --password ${{secrets.DOCKERHUB_PASSWORD}}
+        docker push $GITHUB_REPOSITORY	
         
