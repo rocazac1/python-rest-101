@@ -3,13 +3,12 @@ from waitress import serve
 from paste.translogger import TransLogger
 import logging
 import json
-
+import os
 from models import Person
 
 app = Flask(__name__)
 logger = logging.getLogger('waitress')
-logging.basicConfig(level=logging.DEBUG, filemode="w", filename="/var/log/app.log")
-
+logging.basicConfig(level=logging.DEBUG, filemode="w", filename=os.getenv('LOG_DIR', '.') + "/app.log")
 
 @app.route("/health", methods=['GET'])
 def health():

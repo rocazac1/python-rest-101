@@ -30,6 +30,13 @@ Request eg.:
 }
 ```
 
+### development
+
+```
+pip install --no-cache-dir  -r requirements.txt
+LOG_DIR=$(pwd)/logs python src/main.py
+```
+
 ### docker
 
 Build:
