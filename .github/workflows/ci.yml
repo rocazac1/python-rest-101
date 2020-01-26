@@ -28,3 +28,10 @@ jobs:
       run: |
         pip install pytest
         pytest
+    - name: Docker Build
+      run: docker build -f Dockerfile-CI -t ${{secrets.DOCKERHUB_USER}}/$REPO:$GITHUB_SHA -t docker.pkg.github.com/yousee/$REPO/$REPO:$GITHUB_SHA  .
+    - name: Docker Push DockerHub
+      run: |
+        docker login --username ${{secrets.DOCKERHUB_USER}} --password ${{secrets.DOCKERHUB_PASSWORD}}
+        docker push ${{secrets.DOCKERHUB_USER}}/$REPO
+        
