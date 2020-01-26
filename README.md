@@ -1,5 +1,5 @@
 # python-rest-101
-This is a python rest service with the following rest point.
+This is a python rest service with the following rest point..
 
 
 ### to dos
