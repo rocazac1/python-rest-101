@@ -40,7 +40,7 @@ LOG_DIR=$(pwd)/logs python src/main.py
 ### testing
 
 ```
-src/python -m unittest test_models.py
+cd src && python -m unittest test_models.py
 ```
 
 ### docker
