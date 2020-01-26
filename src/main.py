@@ -8,7 +8,8 @@ from models import Person
 
 app = Flask(__name__)
 logger = logging.getLogger('waitress')
-logger.setLevel(logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG, filemode="w", filename="/var/log/app.log")
+
 
 @app.route("/health", methods=['GET'])
 def health():
