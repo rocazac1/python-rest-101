@@ -1,8 +1,14 @@
 from flask import Flask, request
-import  json
+from waitress import serve
+from paste.translogger import TransLogger
+import logging
+import json
+
 from models import Person
 
 app = Flask(__name__)
+logger = logging.getLogger('waitress')
+logger.setLevel(logging.DEBUG)
 
 @app.route("/health", methods=['GET'])
 def health():
@@ -23,11 +29,10 @@ def createToDos():
         jsonObject = request.get_json()
         name, age = jsonObject["name"], jsonObject["age"]
         person = Person(name, age)
-        print(person)
+        logger.info(person)
         return (person.toJson())
     except (ValueError, KeyError, TypeError):
         return "Invalid Request", 400
 
-
 if __name__  == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    serve(TransLogger(app, setup_console_handler = True), host='0.0.0.0', port=5000)
