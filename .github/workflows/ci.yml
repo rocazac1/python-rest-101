@@ -33,5 +33,5 @@ jobs:
     - name: Docker Push DockerHub
       run: |
         docker login --username ${{secrets.DOCKERHUB_USER}} --password ${{secrets.DOCKERHUB_PASSWORD}}
-        docker push ${{secrets.DOCKERHUB_USER}}/$REPO
+        docker push ${{secrets.DOCKERHUB_USER}}/python-rest-101
         
