@@ -29,9 +29,9 @@ jobs:
         pip install pytest
         pytest
     - name: Docker Build
-      run: docker build -t ${{secrets.DOCKERHUB_USER}}/$REPO .
+      run: docker build -t rocazac1/$REPO .
     - name: Docker Push DockerHub
       run: |
-        docker login --username ${{secrets.DOCKERHUB_USER}} --password ${{secrets.DOCKERHUB_PASSWORD}}
+        docker login --username rocazac1 --password ${{secrets.DOCKERHUB_PASSWORD}}
         docker push ${{secrets.DOCKERHUB_USER}}/$REPO
         
