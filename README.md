@@ -1,5 +1,5 @@
 # python-rest-101
-This is a python rest srvice with the following rest point.
+This is a python rest service with the following rest point.
 
 
 ### to dos
@@ -7,20 +7,22 @@ This is a python rest srvice with the following rest point.
 * persist to mongo
 * consume from a queue (eg. rabbitMQ)
 
-HTTP method GET
+/health HTTP method GET
+```
+http://localhost:5000/health
 ```
 
+/hello HTTP method GET
+```
 http://localhost:5000/hello?name=foo
-
-```
-HTTP method POST
 ```
 
+/todos HTTP method POST
+```
 http://localhost:5000/todos
-
 ```
-Request eg.:
 
+Request eg.:
 ```
 {
     "age": 24,
@@ -32,10 +34,10 @@ Request eg.:
 
 Build:
 ```
-docker build -t rocazac1/python-rest-101 .
+./build.sh
 ```
 
-Run: 
+Run:
 ```
-docker run  -p 5000:5000 rocazac1/python-rest-101
+./run.sh
 ```

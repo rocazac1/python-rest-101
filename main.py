@@ -4,6 +4,10 @@ from models import Person
 
 app = Flask(__name__)
 
+@app.route("/health", methods=['GET'])
+def health():
+    return("OK")
+
 @app.route("/hello", methods=['GET'])
 def hello():
     name = request.args.get('name')
