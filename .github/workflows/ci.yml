@@ -1,4 +1,4 @@
-name: Python application
+name: py-rest-101
 
 on: [push]
 
