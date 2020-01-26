@@ -1,11 +1,9 @@
-from flask import Flask, request
+from flask import Flask, request  
 from waitress import serve
 from paste.translogger import TransLogger
 import logging
 import os
-
 from models import Person
-
 
 app = Flask(__name__)
 logger = logging.getLogger('waitress')
@@ -38,5 +36,7 @@ def createToDos():
       return "Invalid Request", 400
 
 
-if __name__  == '__main__':
+
+
+if __name__ == '__main__':
     serve(TransLogger(app, setup_console_handler = True), host='0.0.0.0', port=5000)
