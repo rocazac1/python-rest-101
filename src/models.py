@@ -5,7 +5,9 @@ class Person():
       self.name = name
       self.age = age
     def __str__(self):
-        return 'name = ' + self.name + ' age = ' + str(self.age)
+      return 'name = ' + self.name + ' age = ' + str(self.age)
     def toJson(self):
-         return json.dumps(self, default=lambda o: o.__dict__, 
-            sort_keys=True, indent=4)
+      return json.dumps(self, default=lambda o: o.__dict__, 
+        sort_keys=True, indent=4)
+    def isAdult(self):
+      return self.age > 17 
