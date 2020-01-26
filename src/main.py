@@ -32,7 +32,7 @@ def createToDos():
         logger.info(person)
         return (person.toJson())
     except (ValueError, KeyError, TypeError):
-        return "Invalid Request", 400
+      return "Invalid Request", 400
 
 if __name__  == '__main__':
     serve(TransLogger(app, setup_console_handler = True), host='0.0.0.0', port=5000)
